@@ -3,7 +3,7 @@
 #define WIFI_CONFIG_H
 
 // Default WiFi credentials — change these or set via web config
-#define DEFAULT_SSID "yeluris"
-#define DEFAULT_PASSWORD "SmartKids@2024"
+#define DEFAULT_SSID "xxxxxx"
+#define DEFAULT_PASSWORD "xxxxxxxx"
 
 #endif // WIFI_CONFIG_H
