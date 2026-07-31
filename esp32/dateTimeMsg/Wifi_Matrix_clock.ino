@@ -6,7 +6,7 @@
 
 // WiFi credentials
 const char* ssid = "xxxxxxx";
-const char* password = "xxxxxxxx";
+const char* password = "xxxxxxx";
 
 // Define NTP Settings
 const char* ntpServer          = "pool.ntp.org";
@@ -27,12 +27,13 @@ char timeBuffer[40];
 
 MD_Parola display = MD_Parola(HARDWARE_TYPE, DATA_PIN, CLK_PIN, CS_PIN, MAX_DEVICES);
 
-// Text to be displayed (can be changed according to needs)
+// Text to be displayed 
 const char* runningText = "Devaki Devi is the Queen of our house";
+const char* hBdyText = "Happy Birthday dear Devaki Devi * * *";
 
 unsigned long lastSwitch = 0;
 int mode = 0; // 0: jam, 1: running text
-const int switchInterval = 12000; 
+const int switchInterval = 10000; 
 
 
 // Array containing your sequential messages
@@ -89,8 +90,13 @@ void obtainDate() {
 
 void displayMsg(){
   display.displayScroll(runningText, PA_LEFT, PA_SCROLL_LEFT, 50);
+  display.displayReset();
 }
 
+void hBdyMsg(){
+  display.displayScroll(hBdyText, PA_LEFT, PA_SCROLL_LEFT, 50);
+  display.displayReset();
+}
 void setup() {
   Serial.begin(115200);
   display.begin();            // Initialize display
@@ -122,7 +128,6 @@ void setup() {
 
 void loop() {
 
-  displayMsg();
   // Logic to switch between dateTime and scrolling text message
   unsigned long nowMillis = millis();
 
@@ -142,7 +147,6 @@ void loop() {
 
     display.setTextAlignment(PA_CENTER);
     display.print(timeStr);
-
     delay(1000); // update time every second
     }else {
     obtainDate();
