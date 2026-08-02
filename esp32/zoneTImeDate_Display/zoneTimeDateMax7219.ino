@@ -42,8 +42,8 @@ const int   daylightOffset_sec = 0;     // Change if your area observes Daylight
 
 int timezone = 0;
 int dst = 0;
-const char* ssid = "yeluris";
-const char* password = "SmartKids@2024";
+const char* ssid = "xxxxxx";
+const char* password = "xxxxxxxxx";
 char Message[MAX_MESG+1] = { "Wish You A Nice Day!" };
 char WeatherTh[MAX_MESG+1] = "";
 
